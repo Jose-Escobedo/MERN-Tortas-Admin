@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar/Sidebar";
+import UserList from "./components/User/UserList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Sidebar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/users" element={<UserList />} />
         </Routes>
       </div>
     </AppConatiner>
