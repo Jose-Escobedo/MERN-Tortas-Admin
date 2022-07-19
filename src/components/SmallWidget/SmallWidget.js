@@ -9,12 +9,12 @@ const SmallWidget = () => {
         <ul className="widgetSmList">
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">Mary Smith</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">
@@ -24,12 +24,12 @@ const SmallWidget = () => {
           </li>
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">Mary Smith</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">
@@ -39,12 +39,12 @@ const SmallWidget = () => {
           </li>
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">Mary Smith</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">
@@ -54,12 +54,12 @@ const SmallWidget = () => {
           </li>
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">Mary Smith</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">
@@ -69,12 +69,12 @@ const SmallWidget = () => {
           </li>
           <li className="widgetSmListItem">
             <img
-              src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
               alt=""
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Anna Keller</span>
+              <span className="widgetSmUsername">Mary Smith</span>
               <span className="widgetSmUserTitle">Software Engineer</span>
             </div>
             <button className="widgetSmButton">

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WidgetLg = () => {
+const LargeWidget = () => {
   const Button = ({ type }) => {
     return <button className={"widgetLgButton " + type}>{type}</button>;
   };
@@ -18,11 +18,11 @@ const WidgetLg = () => {
           <tr className="widgetLgTr">
             <td className="widgetLgUser">
               <img
-                src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Susan Carol</span>
+              <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
             <td className="widgetLgAmount">$122.00</td>
@@ -33,11 +33,11 @@ const WidgetLg = () => {
           <tr className="widgetLgTr">
             <td className="widgetLgUser">
               <img
-                src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Susan Carol</span>
+              <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
             <td className="widgetLgAmount">$122.00</td>
@@ -48,11 +48,11 @@ const WidgetLg = () => {
           <tr className="widgetLgTr">
             <td className="widgetLgUser">
               <img
-                src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Susan Carol</span>
+              <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
             <td className="widgetLgAmount">$122.00</td>
@@ -63,11 +63,11 @@ const WidgetLg = () => {
           <tr className="widgetLgTr">
             <td className="widgetLgUser">
               <img
-                src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Susan Carol</span>
+              <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
             <td className="widgetLgAmount">$122.00</td>
