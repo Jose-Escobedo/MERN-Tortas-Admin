@@ -8,7 +8,9 @@ function App() {
     <AppConatiner>
       <Navbar />
       <div className="container">
-        <Home />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
       </div>
     </AppConatiner>
   );
