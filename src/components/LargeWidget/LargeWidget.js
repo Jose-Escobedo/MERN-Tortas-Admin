@@ -1,9 +1,26 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { userRequest } from "../../requestMethods";
+import { format } from "timeago.js";
 
 const LargeWidget = () => {
   const Button = ({ type }) => {
     return <button className={"widgetLgButton " + type}>{type}</button>;
   };
+
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const getOrders = async () => {
+      try {
+        const res = await userRequest.get("Orders/?new=true");
+        setOrders(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getOrders();
+  }, []);
   return (
     <WidgetContainer>
       <div className="widgetLg">
@@ -15,66 +32,18 @@ const LargeWidget = () => {
             <th className="widgetLgTh">Amount</th>
             <th className="widgetLgTh">Status</th>
           </tr>
-          <tr className="widgetLgTr">
-            <td className="widgetLgUser">
-              <img
-                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className="widgetLgImg"
-              />
-              <span className="widgetLgName">Matt Johnson</span>
-            </td>
-            <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$12.00</td>
-            <td className="widgetLgStatus">
-              <Button type="Approved" />
-            </td>
-          </tr>
-          <tr className="widgetLgTr">
-            <td className="widgetLgUser">
-              <img
-                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className="widgetLgImg"
-              />
-              <span className="widgetLgName">Matt Johnson</span>
-            </td>
-            <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$12.00</td>
-            <td className="widgetLgStatus">
-              <Button type="Declined" />
-            </td>
-          </tr>
-          <tr className="widgetLgTr">
-            <td className="widgetLgUser">
-              <img
-                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className="widgetLgImg"
-              />
-              <span className="widgetLgName">Matt Johnson</span>
-            </td>
-            <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$12.00</td>
-            <td className="widgetLgStatus">
-              <Button type="Pending" />
-            </td>
-          </tr>
-          <tr className="widgetLgTr">
-            <td className="widgetLgUser">
-              <img
-                src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className="widgetLgImg"
-              />
-              <span className="widgetLgName">Matt Johnson</span>
-            </td>
-            <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$12.00</td>
-            <td className="widgetLgStatus">
-              <Button type="Approved" />
-            </td>
-          </tr>
+          {orders.map((order) => {
+            <tr className="widgetLgTr" key={order.id}>
+              <td className="widgetLgUser">
+                <span className="widgetLgName">{order.userId}</span>
+              </td>
+              <td className="widgetLgDate">{format(order.createdAt)}</td>
+              <td className="widgetLgAmount">`$ {order.amount}`</td>
+              <td className="widgetLgStatus">
+                <Button type={order.status} />
+              </td>
+            </tr>;
+          })}
         </table>
       </div>
     </WidgetContainer>
@@ -128,15 +97,15 @@ const WidgetContainer = styled.div`
     border-radius: 10px;
   }
 
-  .widgetLgButton.Approved {
+  .widgetLgButton.approved {
     background-color: #e5faf2;
     color: #3bb077;
   }
-  .widgetLgButton.Declined {
+  .widgetLgButton.declined {
     background-color: #fff0f1;
     color: #d95087;
   }
-  .widgetLgButton.Pending {
+  .widgetLgButton.pending {
     background-color: #ebf1fe;
     color: #2a7ade;
   }

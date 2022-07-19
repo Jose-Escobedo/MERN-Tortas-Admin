@@ -25,7 +25,7 @@ const SmallWidget = () => {
         <ul className="widgetSmList">
           {users.map((user) => {
             return (
-              <li className="widgetSmListItem" key={user.id}>
+              <li className="widgetSmListItem" key={user._id}>
                 <img
                   src={
                     user.img ||
