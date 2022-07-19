@@ -25,7 +25,7 @@ const LargeWidget = () => {
               <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$122.00</td>
+            <td className="widgetLgAmount">$12.00</td>
             <td className="widgetLgStatus">
               <Button type="Approved" />
             </td>
@@ -40,7 +40,7 @@ const LargeWidget = () => {
               <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$122.00</td>
+            <td className="widgetLgAmount">$12.00</td>
             <td className="widgetLgStatus">
               <Button type="Declined" />
             </td>
@@ -55,7 +55,7 @@ const LargeWidget = () => {
               <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$122.00</td>
+            <td className="widgetLgAmount">$12.00</td>
             <td className="widgetLgStatus">
               <Button type="Pending" />
             </td>
@@ -70,7 +70,7 @@ const LargeWidget = () => {
               <span className="widgetLgName">Matt Johnson</span>
             </td>
             <td className="widgetLgDate">2 Jun 2021</td>
-            <td className="widgetLgAmount">$122.00</td>
+            <td className="widgetLgAmount">$12.00</td>
             <td className="widgetLgStatus">
               <Button type="Approved" />
             </td>

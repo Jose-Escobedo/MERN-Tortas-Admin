@@ -3,12 +3,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar/Sidebar";
-import UserList from "./components/User/UserList";
-import User from "./components/User/User";
-import NewUser from "./components/User/NewUser";
-import ProductList from "./components/Products/ProductList";
-import Product from "./components/Products/Product";
-import NewProduct from "./components/Products/NewProduct";
+import UserList from "./pages/User/UserList";
+import User from "./pages/User/User";
+import NewUser from "./pages/User/NewUser";
+import ProductList from "./pages/Products/ProductList";
+import Product from "./pages/Products/Product";
+import NewProduct from "./pages/Products/NewProduct";
 
 function App() {
   return (
