@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import styled from "styled-components";
 import Sidebar from "./components/Sidebar/Sidebar";
 import UserList from "./components/User/UserList";
+import User from "./components/User/User";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/users" element={<UserList />} />
+          <Route exact path="/user/:userId" element={<User />} />
         </Routes>
       </div>
     </AppConatiner>
