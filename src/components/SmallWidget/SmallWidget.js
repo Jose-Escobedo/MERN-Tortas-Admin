@@ -1,87 +1,49 @@
 import styled from "styled-components";
 import { Visibility } from "@material-ui/icons";
+import { useEffect, useState } from "react";
+import { userRequest } from "../../requestMethods";
 
 const SmallWidget = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const res = await userRequest.get("users/?new=true");
+        setUsers(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUsers();
+  }, []);
+
   return (
     <WidgetContainer>
       <div className="widgetSm">
         <span className="widgetSmTitle">New Join Members</span>
         <ul className="widgetSmList">
-          <li className="widgetSmListItem">
-            <img
-              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Mary Smith</span>
-              <span className="widgetSmUserTitle">Software Engineer</span>
-            </div>
-            <button className="widgetSmButton">
-              <Visibility className="widgetSmIcon" />
-              Display
-            </button>
-          </li>
-          <li className="widgetSmListItem">
-            <img
-              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Mary Smith</span>
-              <span className="widgetSmUserTitle">Software Engineer</span>
-            </div>
-            <button className="widgetSmButton">
-              <Visibility className="widgetSmIcon" />
-              Display
-            </button>
-          </li>
-          <li className="widgetSmListItem">
-            <img
-              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Mary Smith</span>
-              <span className="widgetSmUserTitle">Software Engineer</span>
-            </div>
-            <button className="widgetSmButton">
-              <Visibility className="widgetSmIcon" />
-              Display
-            </button>
-          </li>
-          <li className="widgetSmListItem">
-            <img
-              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Mary Smith</span>
-              <span className="widgetSmUserTitle">Software Engineer</span>
-            </div>
-            <button className="widgetSmButton">
-              <Visibility className="widgetSmIcon" />
-              Display
-            </button>
-          </li>
-          <li className="widgetSmListItem">
-            <img
-              src="https://images.pexels.com/photos/1898555/pexels-photo-1898555.jpeg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Mary Smith</span>
-              <span className="widgetSmUserTitle">Software Engineer</span>
-            </div>
-            <button className="widgetSmButton">
-              <Visibility className="widgetSmIcon" />
-              Display
-            </button>
-          </li>
+          {users.map((user) => {
+            return (
+              <li className="widgetSmListItem" key={user.id}>
+                <img
+                  src={
+                    user.img ||
+                    "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                  }
+                  alt=""
+                  className="widgetSmImg"
+                />
+                <div className="widgetSmUser">
+                  <span className="widgetSmUsername">{user.username}</span>
+                </div>
+                <button className="widgetSmButton">
+                  <Visibility className="widgetSmIcon" />
+                  Display
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </WidgetContainer>
