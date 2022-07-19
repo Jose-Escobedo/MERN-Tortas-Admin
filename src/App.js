@@ -9,23 +9,40 @@ import NewUser from "./pages/User/NewUser";
 import ProductList from "./pages/Products/ProductList";
 import Product from "./pages/Products/Product";
 import NewProduct from "./pages/Products/NewProduct";
+import Login from "./pages/Login/Login";
 
 function App() {
+  const admin = JSON.parse(
+    JSON.parse(localStorage.getItem("persist:root")).currentUser
+  ).isAdmin;
   return (
     <AppConatiner>
-      <Navbar />
-      <div className="container">
-        <Sidebar />
+      {admin ? (
+        <>
+          <Navbar />
+          <div className="container">
+            <Sidebar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/users" element={<UserList />} />
+              <Route exact path="/user/:userId" element={<User />} />
+              <Route exact path="/newUser" element={<NewUser />} />
+              <Route exact path="/products" element={<ProductList />} />
+              <Route exact path="/product/:productId" element={<Product />} />
+              <Route exact path="/newproduct" element={<NewProduct />} />
+              <Route
+                exact
+                path="/login"
+                element={admin ? <Navigate to="/" /> : <Login />}
+              />
+            </Routes>
+          </div>
+        </>
+      ) : (
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/users" element={<UserList />} />
-          <Route exact path="/user/:userId" element={<User />} />
-          <Route exact path="/newUser" element={<NewUser />} />
-          <Route exact path="/products" element={<ProductList />} />
-          <Route exact path="/product/:productId" element={<Product />} />
-          <Route exact path="/newproduct" element={<NewProduct />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
-      </div>
+      )}
     </AppConatiner>
   );
 }
