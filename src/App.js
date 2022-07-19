@@ -8,6 +8,7 @@ import User from "./components/User/User";
 import NewUser from "./components/User/NewUser";
 import ProductList from "./components/Products/ProductList";
 import Product from "./components/Products/Product";
+import NewProduct from "./components/Products/NewProduct";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/newUser" element={<NewUser />} />
           <Route exact path="/products" element={<ProductList />} />
           <Route exact path="/product/:productId" element={<Product />} />
+          <Route exact path="/newproduct" element={<NewProduct />} />
         </Routes>
       </div>
     </AppConatiner>
