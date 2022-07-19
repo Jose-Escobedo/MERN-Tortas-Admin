@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import UserList from "./components/User/UserList";
 import User from "./components/User/User";
 import NewUser from "./components/User/NewUser";
+import ProductList from "./components/Products/ProductList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/users" element={<UserList />} />
           <Route exact path="/user/:userId" element={<User />} />
           <Route exact path="/newUser" element={<NewUser />} />
+          <Route exact path="/products" element={<ProductList />} />
         </Routes>
       </div>
     </AppConatiner>
