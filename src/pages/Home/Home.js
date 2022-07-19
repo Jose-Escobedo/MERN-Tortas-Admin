@@ -1,4 +1,4 @@
-import Chart from "../../components/chart/Chart";
+import Chart from "../../components/Chart/Chart";
 import styled from "styled-components";
 
 const Home = () => {
