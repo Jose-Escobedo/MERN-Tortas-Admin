@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { userData } from "../../seedData";
 import SmallWidget from "../../components/SmallWidget/SmallWidget";
 import LargeWidget from "../../components/LargeWidget/LargeWidget";
+import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo";
 
 const Home = () => {
   return (
     <HomeContainer>
       <div className="home">
+        <FeaturedInfo />
         <Chart
           data={userData}
           title="User Analytics"
