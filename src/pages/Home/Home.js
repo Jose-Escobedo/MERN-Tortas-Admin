@@ -38,9 +38,7 @@ const Home = () => {
             { name: MONTHS[item._id - 1], "Active User": item.total },
           ])
         );
-      } catch (err) {
-        console.log(err);
-      }
+      } catch {}
     };
     getStats();
   }, [MONTHS]);

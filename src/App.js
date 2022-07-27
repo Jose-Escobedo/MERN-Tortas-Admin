@@ -13,10 +13,11 @@ import Login from "./pages/Login/Login";
 
 function App() {
   const admin = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).currentUser
-  ).isAdmin;
+    JSON.parse(localStorage.getItem("persist:root"))?.user || "{}"
+  )?.currentUser?.isAdmin;
+
   return (
-    <AppConatiner>
+    <AppContainer>
       {admin ? (
         <>
           <Navbar />
@@ -39,15 +40,18 @@ function App() {
           </div>
         </>
       ) : (
-        <Routes>
-          <Route exact path="/login" element={<Login />} />
-        </Routes>
+        <>
+          <Navigate to="/" />
+          <Routes>
+            <Route exact path="/login" element={<Login />} />
+          </Routes>
+        </>
       )}
-    </AppConatiner>
+    </AppContainer>
   );
 }
 
-const AppConatiner = styled.div`
+const AppContainer = styled.div`
   .container {
     display: flex;
     margin-top: 10px;
