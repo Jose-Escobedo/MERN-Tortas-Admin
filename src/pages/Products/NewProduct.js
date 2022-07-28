@@ -1,5 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 const NewProduct = () => {
+  const [inputs, setInputs] = useState({});
   return (
     <NewProductContainer>
       <div className="newProduct">
@@ -23,6 +25,10 @@ const NewProduct = () => {
           <div className="addProductItem">
             <label>Price</label>
             <input type="text" placeholder="100" />
+          </div>
+          <div className="addProductItem">
+            <label>Categories</label>
+            <input type="text" placeholder="tamal, combos" />
           </div>
           <div className="addProductItem">
             <label>Description</label>
