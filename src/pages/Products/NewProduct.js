@@ -15,14 +15,18 @@ const NewProduct = () => {
           </div>
           <div className="addProductItem">
             <label>Stock</label>
-            <input type="text" placeholder="123" />
+            <select>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
+            </select>
           </div>
           <div className="addProductItem">
-            <label>Active</label>
-            <select name="active" id="active">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+            <label>Price</label>
+            <input type="text" placeholder="100" />
+          </div>
+          <div className="addProductItem">
+            <label>Description</label>
+            <input type="text" placeholder="Tasty food..." />
           </div>
           <button className="addProductButton">Create</button>
         </form>
