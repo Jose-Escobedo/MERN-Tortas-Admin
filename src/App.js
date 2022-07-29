@@ -12,9 +12,9 @@ import NewProduct from "./pages/Products/NewProduct";
 import Login from "./pages/Login/Login";
 
 function App() {
-  const admin = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root"))?.user || "{}"
-  )?.currentUser?.isAdmin;
+  const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
+  const currentUser = user && JSON.parse(user).currentUser;
+  const admin = currentUser?.isAdmin;
 
   return (
     <AppContainer>
@@ -34,14 +34,13 @@ function App() {
               <Route
                 exact
                 path="/login"
-                element={admin ? <Navigate to="/" /> : <Login />}
+                element={admin ? <Navigate to="/" /> : null}
               />
             </Routes>
           </div>
         </>
       ) : (
         <>
-          <Navigate to="/" />
           <Routes>
             <Route exact path="/login" element={<Login />} />
           </Routes>

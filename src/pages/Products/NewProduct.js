@@ -6,15 +6,22 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+
+import app from "../../firebase";
+import { addProduct } from "../../Redux/apiCalls";
+import { useDispatch } from "react-redux";
+
 const NewProduct = () => {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [category, setCategory] = useState([]);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setInputs((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
+    console.log(e.target.value);
   };
   const handleCategories = (e) => {
     setCategory(e.target.value.split(","));
@@ -22,7 +29,36 @@ const NewProduct = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    const fileName = new Date().getTime() + file.name;
+    const storage = getStorage(app);
+    const storageRef = ref(storage, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        switch (snapshot.state) {
+          case "paused":
+            console.log("upload is paused");
+            break;
+          case "running":
+            console.log("upload is running");
+            break;
+          default:
+        }
+      },
+
+      (error) => {},
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          const product = { ...inputs, img: downloadURL, categories: category };
+          addProduct(product, dispatch);
+        });
+      }
+    );
   };
+
   return (
     <NewProductContainer>
       <div className="newProduct">
